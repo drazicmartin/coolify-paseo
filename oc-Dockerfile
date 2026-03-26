@@ -4,7 +4,7 @@ FROM node:20-alpine
 RUN apk add --no-cache git bash
 
 # install opencode
-RUN npm install -g @opencode/cli
+RUN npm install -g opencode-ai
 
 WORKDIR /workspace
 
