@@ -6,8 +6,8 @@ services:
     volumes:
       - paseo_workspace:/workspace
     environment:
-      - OPENAI_API_KEY=xxx
-      - ANTHROPIC_API_KEY=xxx
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
 
 volumes:
   paseo_workspace:
