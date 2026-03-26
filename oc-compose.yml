@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   opencode:
-    build: ./oc-Dockerfile
+    build: oc-Dockerfile
     volumes:
       - opencode_workspace:/workspace
     environment:
