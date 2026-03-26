@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  paseo:
+    build: .
+    volumes:
+      - paseo_workspace:/workspace
+    environment:
+      - OPENAI_API_KEY=xxx
+      - ANTHROPIC_API_KEY=xxx
+
+volumes:
+  paseo_workspace:
