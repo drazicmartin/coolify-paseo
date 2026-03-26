@@ -17,9 +17,6 @@ WORKDIR /home/devuser/workspace
 RUN mkdir -p /home/devuser/.local/share/opencode/bin \
     && mkdir -p /home/devuser/.cache/opencode
 
-# force binary install
-RUN opencode --version
-
 EXPOSE 4096
 
 CMD ["opencode", "web", "--port", "4096", "--hostname", "0.0.0.0"]
