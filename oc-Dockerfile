@@ -1,0 +1,14 @@
+FROM node:20-alpine
+
+# system deps (recommended)
+RUN apk add --no-cache git bash
+
+# install opencode
+RUN npm install -g @opencode/cli
+
+WORKDIR /workspace
+
+EXPOSE 4096
+
+# start web mode (IMPORTANT flags)
+CMD ["opencode", "web", "--port", "4096", "--hostname", "0.0.0.0"]

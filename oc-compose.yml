@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  opencode:
+    build: ./oc-Dockerfile
+    volumes:
+      - opencode_workspace:/workspace
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENCODE_SERVER_PASSWORD=${OPENCODE_SERVER_PASSWORD}
+
+volumes:
+  opencode_workspace:
