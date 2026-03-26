@@ -1,21 +1,17 @@
-FROM node:20-alpine
+FROM node:slim
 
-# system deps
-RUN apk add --no-cache git bash curl
-
-# create user
-RUN adduser -D devuser
+RUN apt update && apt install -y --no-install-recommends \
+    # Core utilities needed for setup and the curl install script
+    wget \
+    vim \
+    ca-certificates \
+    curl \
+    unzip \
+    gnupg \
+    sudo
 
 # install opencode globally
 RUN npm install -g opencode-ai
-
-# switch to user
-USER devuser
-WORKDIR /home/devuser/workspace
-
-# FIX: required directories for opencode
-RUN mkdir -p /home/devuser/.local/share/opencode/bin \
-    && mkdir -p /home/devuser/.cache/opencode
 
 EXPOSE 4096
 
